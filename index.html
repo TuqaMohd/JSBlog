@@ -43,7 +43,11 @@
             </span>
           </div>
         </a>
-
+        <div class="hidden md:flex flex-1 max-w-lg relative group">
+          <span class="absolute inset-y-0 left-3 flex items-center pointer-events-none text-neutral-400 transition-colors group-focus-within:text-rose-600">
+            <i data-lucide="search" class="h-4 w-4"></i>
+          </span>
+        </div>
           <button
             onclick="toggleMobileMenu()"
             type="button"
@@ -52,7 +56,8 @@
             <i data-lucide="menu" id="hamburger-icon" class="h-6 w-6"></i>
           </button>
        <div>
-            <ul class="flex items-center gap-3 justify-center justify space-evenly text-lg font-bold text-neutral-600 tracking-wide uppercase">
+            <ul class="flex justify-end justify space-evenly gap-2.5 text-lg font-bold text-neutral
+            -600 tracking-wide uppercase">
               <li><a href="#db-section" class="hover:text-rose-600 transition-colors">Home</a></li>
               <li><button class = "hover:text-rose-600 transition-colors "onclick="window.location.href='blog.html'">BLOG</button></li>
               <li><a href="#db-section" class="hover:text-rose-600 transition-colors">About Me</a></li>

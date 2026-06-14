@@ -30,20 +30,26 @@
             </span>
           </div>
         </a>
-                <!-- Search bar design-->
-        <div class="hidden md:flex flex-1 max-w-lg relative group">
-          <span class="absolute inset-y-0 left-3 flex items-center pointer-events-none text-neutral-400 transition-colors group-focus-within:text-rose-600">
-            <i data-lucide="search" class="h-4 w-4"></i>
-          </span>
-          <input
-            id="search-input"
-            type="text"
-            class="w-full bg-neutral-55 hover:bg-neutral-100/70 text-neutral-800 rounded-xl border border-neutral-100 pl-6 pr-20 py-2.5 text-sm placeholder-neutral-400 focus:bg-white focus:border-rose-500 focus:ring-4 focus:ring-rose-50 focus:outline-none transition-all duration-200"
-            placeholder="Type to travel elsewhere...."
-          />
-          <span class="absolute right-2 top-2 px-3 py-1 text-[10px] font-bold uppercase tracking-wider bg-rose-50 text-rose-700 rounded-lg pointer-events-none font-mono">
-            Search
-          </span>
-        </div>  
+
         </body>  
-        <button onclick="window.location.href='index.html'">Go to Home Page</button> 
+                  <button
+            onclick="toggleMobileMenu()"
+            type="button"
+            class="md:hidden p-2 hover:bg-neutral-50 text-neutral-800 rounded-full transition-colors">
+          >
+            <i data-lucide="menu" id="hamburger-icon" class="h-6 w-6"></i>
+          </button>
+               <div>
+            <ul class="flex items-center gap-3 justify-center justify space-evenly text-lg font-bold text-neutral-600 tracking-wide uppercase">
+              <li><button class = "hover:text-rose-600 transition-colors "onclick="window.location.href='index.html'">HOME</button></li>
+              <li><a href="#db-section" class="hover:text-rose-600 transition-colors">Blog</a></li>
+              <li><a href="#db-section" class="hover:text-rose-600 transition-colors">About Me</a></li>
+              <li><a href="#db-section" class="hover:text-rose-600 transition-colors">Hobbies & Interests</a></li>
+              <li><a href="#db-section" class="hover:text-rose-600 transition-colors">Future Goals</a></li>
+            </ul>
+            <button class = "hover:text-rose-600 transition-colors"></button>
+        </div> 
+    </header>
+        <h1 class="text-[10px] uppercase text-lg text-center font-extrabold text-rose-800 font-mono mt-2 leading-none">Welcome To The Official Blog Page</h1>
+        <h2 class="text-[10px] uppercase text-lg text-center font-extrabold text-rose-700 font-mono mt-2 leading-none">This is where I will be uploading updates on my digital diary in posters form. Make sure to check in regularly to not miss any events! </h2>
+        <hr class = "py-2 border-rose-900"></hrclass>

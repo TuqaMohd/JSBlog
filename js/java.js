@@ -20,7 +20,13 @@ document.addEventListener("DOMContentLoaded", () => { //addeventlistener basical
         window.location.href = targetURL;
     }
     }); //blog ln 35 | index ln 34s
-
+    const blogDB = [
+        {id: 1, title: 'First'},
+        {id: 2, title: 'Second'}
+    ];
+    //using the spread operator to add new data to my blog. I will work on styling it later.
+    const BlogDBupdated = {id: 3, title: 'Third'};
+    const updatedBlogDB = [...blogDB, {...BlogDBupdated, views: 1}];
     const searchInput = document.getElementById("search-input");
     const searchButton = document.querySelector("button[onclick='executeSearch()']") || document.querySelector(".group button");
 
@@ -78,16 +84,14 @@ document.addEventListener("DOMContentLoaded", () => { //addeventlistener basical
         return post.isPublished === true;
     });
     
- const admin = {
-    role: "Admin: ",
-  fname: "Tuqa  ",
-  lname: "AlHosni  ",
+    const admin = {
+ role: "Admin: ",
+    fname: "Tuqa  ",
+    lname: "AlHosni  ",
     };
     let {role, fname, lname} = admin;
     document.getElementById("demo2").innerHTML =
     role + fname + lname + " ";
-
-
 
 
     const postStrings = publishedPosts.map(post => { //editing My Blog's cards

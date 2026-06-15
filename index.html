@@ -31,7 +31,20 @@
             </span>
           </div>
         </a>
-
+        <div class="hidden md:flex flex-1 max-w-lg relative group">
+          <span class="absolute inset-y-0 left-3 flex items-center pointer-events-none text-neutral-400 transition-colors group-focus-within:text-teal-600">
+            <i data-lucide="search" class="h-4 w-4"></i>
+          </span>
+          <input
+            id="search-input"
+            type="text"
+            class="w-full bg-neutral-55 hover:bg-neutral-100/70 text-neutral-800 rounded-xl border border-neutral-100 pl-9 pr-20 py-2.5 text-sm placeholder-neutral-400 focus:bg-white focus:border-teal-500 focus:ring-4 focus:ring-teal-50 focus:outline-none transition-all duration-200"
+            placeholder="Type to search...."
+          />
+        <button class="absolute right-2 top-1.5 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-wider bg-red-50 text-red-400 rounded-lg font-mono cursor-pointer transition-transform hover:rotate-2">
+        Go
+        </button>
+        </div>
         <nav class="hidden md:block">
             <ul class="flex items-center gap-6 text-sm font-bold text-neutral-600 tracking-wider uppercase">
               <li><a href="index.html" class="text-rose-600 transition-colors py-1">Home</a></li>
@@ -132,6 +145,26 @@
         </div>
       </section>
     </main>
+    <hr class = "border-rose-800">
+    <p class="flex justify-center text-rose-900 font-bold padding-right-2 py-4">
+              Join our community!
+            </p>
+            <span class="flex justify-center text-center text-rose-900 font-bold py-2.5 border border-rose-800 p-2"><ul>
+              <li>Enter your full name: <br> <input type="text" id="fname"></li>
+              <li>Select your age: <br> <input type="number" id="age"></li>
+            </ul></span>
+            
+            <span class = "p-1.5 flex justify-center text-center text-rose-900 font-bold shadow-md shadow-rose-600/10 border border-rose-800 bg-white cursor-pointer hover:rotate"
+           button onclick="myFunction()">Submit</button>
+            </span>
+          <script>
+          function myFunction() {
+          alert("Thank you for registering!");
+          }
+          </script>
+
+
+
 
     <!-- Footer -->
     <footer class="bg-neutral-900 text-neutral-400 text-xs border-t border-neutral-850 mt-auto">
@@ -190,4 +223,3 @@
     </footer>
 </body>
 </html>
-<!-- REMINDER: !!!!!!!!!!!!1111Add website logo!!!!!!!!!!!!!!!!!!!1 -->

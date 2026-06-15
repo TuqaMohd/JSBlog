@@ -14,13 +14,51 @@ document.addEventListener("DOMContentLoaded", () => { //addeventlistener basical
         { title: "Best soundtracks to listen to while playing", category: "Music", isPublished: true, views:10, author: "Tuqa" }
     ];
 
+
+    const searchInput = document.getElementById("search-input");
+    const searchButton = document.querySelector("button[onclick='executeSearch()']") || document.querySelector(".group button");
+
+    function executeSearch() {
+        if (!searchInput) return;
+        
+  
+        const query = searchInput.value.toLowerCase().trim();
+        
+        // 2. Define standard keywords for your pages
+        const homeKeywords = ['home', 'index', 'main', 'start'];
+        const blogKeywords = ['blog', 'posts', 'articles', 'news'];
+
+        // 3. keyword filtering
+        if (homeKeywords.includes(query)) {
+            window.location.href = 'index.html';
+        } else if (blogKeywords.includes(query)) {
+            window.location.href = 'blog.html';
+        } else {
+            // Optional fallback alert
+            alert('Page not found. Try searching for "home" or "blog".');
+        }
+    }
+
+    if (searchButton) {
+        searchButton.removeAttribute('onclick'); // Clears inline markup conflict
+        searchButton.addEventListener("click", executeSearch);
+    }
+
+    // allows the user to either press enter or the button to search
+    if (searchInput) {
+        searchInput.addEventListener("keypress", (e) => {
+            if (e.key === 'Enter') {
+                executeSearch();
+            }
+        });
+    }
+
     function toggleMobileMenu() { //creating a responsive design for mobile phones
         const menu = document.getElementById("mobile-dropdown");
         if (menu) {
             menu.classList.toggle("hidden");
         }
     }
-
     const mobileMenuBtn = document.getElementById("mobile-menu-btn"); //responsive design | user navigation through website's buttons like moving between the homepage and my blog
     if (mobileMenuBtn) {
         mobileMenuBtn.addEventListener("click", toggleMobileMenu);

@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => { //addeventlistener basical
     document.getElementById("demo2").innerHTML =
     role + fname + lname + " ";
 
-
+    
     const postStrings = publishedPosts.map(post => { //editing My Blog's cards
         const viewText = post.views + " views";
         return `

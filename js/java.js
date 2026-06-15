@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", () => { //addeventlistener basically responds when we call the function, which in this case is inserting icons from lucide libraries
     if (typeof lucide !== "undefined") { //dom: document object model
         lucide.createIcons();
@@ -13,7 +14,12 @@ document.addEventListener("DOMContentLoaded", () => { //addeventlistener basical
         { title: "My 2nd blog", category: "Coding", isPublished: false, views: 50, author: "Tuqa" },
         { title: "Best soundtracks to listen to while playing", category: "Music", isPublished: true, views:10, author: "Tuqa" }
     ];
-
+    document.getElementById('onchangebar').addEventListener('change', function(){
+    const targetURL = this.value;
+    if (targetURL) {
+        window.location.href = targetURL;
+    }
+    }); //blog ln 35 | index ln 34s
 
     const searchInput = document.getElementById("search-input");
     const searchButton = document.querySelector("button[onclick='executeSearch()']") || document.querySelector(".group button");
@@ -71,6 +77,18 @@ document.addEventListener("DOMContentLoaded", () => { //addeventlistener basical
     const publishedPosts = posts.filter(post => { //blog cards
         return post.isPublished === true;
     });
+    
+ const admin = {
+    role: "Admin: ",
+  fname: "Tuqa  ",
+  lname: "AlHosni  ",
+    };
+    let {role, fname, lname} = admin;
+    document.getElementById("demo2").innerHTML =
+    role + fname + lname + " ";
+
+
+
 
     const postStrings = publishedPosts.map(post => { //editing My Blog's cards
         const viewText = post.views + " views";

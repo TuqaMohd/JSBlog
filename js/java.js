@@ -1,5 +1,5 @@
-document.addEventListener("DOMContentLoaded", () => {
-    if (typeof lucide !== "undefined") {
+document.addEventListener("DOMContentLoaded", () => { //addeventlistener basically responds when we call the function, which in this case is inserting icons from lucide libraries
+    if (typeof lucide !== "undefined") { //dom: document object model
         lucide.createIcons();
     }
 
@@ -7,34 +7,34 @@ document.addEventListener("DOMContentLoaded", () => {
     let indexClicks = 0;
     const hasCategory = true;
 
-    const posts = [
-        { title: "My first painting", category: "Art", isPublished: true, views: 20 },
-        { title: "Why willow trees are my favorite", category: "Nature", isPublished: true, views: 40 },
-        { title: "My 2nd blog", category: "Coding", isPublished: false, views: 50 },
-        { title: "Best soundtracks to listen to while playing", category: "Music", isPublished: true, views:10 }
+    const posts = [ //array seen in blog
+        { title: "My first painting", category: "Art", isPublished: true, views: 20, author: "Tuqa" },
+        { title: "Why willow trees are my favorite", category: "Nature", isPublished: true, views: 40, author: "Tuqa" },
+        { title: "My 2nd blog", category: "Coding", isPublished: false, views: 50, author: "Tuqa" },
+        { title: "Best soundtracks to listen to while playing", category: "Music", isPublished: true, views:10, author: "Tuqa" }
     ];
 
-    function toggleMobileMenu() {
+    function toggleMobileMenu() { //creating a responsive design for mobile phones
         const menu = document.getElementById("mobile-dropdown");
         if (menu) {
             menu.classList.toggle("hidden");
         }
     }
 
-    const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+    const mobileMenuBtn = document.getElementById("mobile-menu-btn"); //responsive design | user navigation through website's buttons like moving between the homepage and my blog
     if (mobileMenuBtn) {
         mobileMenuBtn.addEventListener("click", toggleMobileMenu);
     }
 
-    const uppercaseTitle = (text) => {
+    const uppercaseTitle = (text) => { //forces the welcome title to be in uppercase
         return text.toUpperCase();
     };
 
-    const publishedPosts = posts.filter(post => {
+    const publishedPosts = posts.filter(post => { //blog cards
         return post.isPublished === true;
     });
 
-    const postStrings = publishedPosts.map(post => {
+    const postStrings = publishedPosts.map(post => { //editing My Blog's cards
         const viewText = post.views + " views";
         return `
             <div class="bg-rose-50 border border-rose-100 rounded-xl p-4 flex justify-between items-center text-left">
